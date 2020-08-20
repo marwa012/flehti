@@ -1,3 +1,5 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProprietaireserviceService } from './proprietaire/proprietaireservice.service';
 import { FrontofficeModule } from './../frontoffice/frontoffice.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './../app-routing.module';
@@ -27,8 +29,10 @@ import { PropriUpdateComponent } from './proprietaire/propri-update/propri-updat
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    FrontofficeModule
+    FrontofficeModule,
+    BrowserAnimationsModule
   ],
+  providers: [ProprietaireserviceService],
   exports: [AdminNavbarComponent,
     DashboardPageComponent,
     PropriListComponent,

@@ -1,3 +1,5 @@
+import { PropriUpdateComponent } from './backoffice/proprietaire/propri-update/propri-update.component';
+import { PropriListComponent } from './backoffice/proprietaire/propri-list/propri-list.component';
 import { TravauxPageComponent } from './pages/travaux-page/travaux-page.component';
 import { ParcellePageComponent } from './pages/parcelle-page/parcelle-page.component';
 import { PersonnelPageComponent } from './pages/personnel-page/personnel-page.component';
@@ -8,6 +10,7 @@ import { AdminLandpageComponent } from './pages/admin-landpage/admin-landpage.co
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandpageComponent } from './pages/landpage/landpage.component';
+import { PropriAddformComponent } from './backoffice/proprietaire/propri-addform/propri-addform.component';
 
 const routes: Routes = [
   // {path:"",component:AccueilComponent},
@@ -20,15 +23,23 @@ const routes: Routes = [
     component: AdminLandpageComponent,
     children: [
       {path: 'home', component: DashboardPageComponent},
-      {path: 'proprietaire', component: ProprietairePageComponent},
+      {
+        path: 'proprietaire', component: ProprietairePageComponent,
+        children: [
+          {path: '', component: PropriListComponent} ,
+          {path: 'list', component: PropriListComponent} ,
+          {path: 'add', component: PropriAddformComponent} ,
+          {path: 'update/:id', component: PropriUpdateComponent},
+          {path: '**', redirectTo: '', pathMatch: 'full'} ,
+  ]},
       {path: 'personnel', component: PersonnelPageComponent},
       {path: 'parcelle', component: ParcellePageComponent},
       {path: 'travaux', component: TravauxPageComponent},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]
   },
-  {
-    path: "**",
+{
+    path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
   },
