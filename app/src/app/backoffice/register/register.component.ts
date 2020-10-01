@@ -24,9 +24,11 @@ export class RegisterComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
     this.submitted = true;
-
+    if (this.profileForm.invalid) {
+      return;
         // stop here if form is invalid
-
   }
+  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.profileForm.value, null, 4));
 
+}
 }
