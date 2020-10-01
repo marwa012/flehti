@@ -14,6 +14,8 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { PropriListComponent } from './proprietaire/propri-list/propri-list.component';
 import { PropriAddformComponent } from './proprietaire/propri-addform/propri-addform.component';
 import { PropriUpdateComponent } from './proprietaire/propri-update/propri-update.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { PropriUpdateComponent } from './proprietaire/propri-update/propri-updat
      DashboardPageComponent,
      PropriListComponent,
       PropriAddformComponent,
-      PropriUpdateComponent],
+      PropriUpdateComponent,
+      LoginComponent,
+      RegisterComponent],
   imports: [
     CommonModule,
     BackofficeRoutingModule,

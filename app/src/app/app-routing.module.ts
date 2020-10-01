@@ -1,3 +1,5 @@
+import { RegisterComponent } from './backoffice/register/register.component';
+import { LoginComponent } from './backoffice/login/login.component';
 import { PropriUpdateComponent } from './backoffice/proprietaire/propri-update/propri-update.component';
 import { PropriListComponent } from './backoffice/proprietaire/propri-list/propri-list.component';
 import { TravauxPageComponent } from './pages/travaux-page/travaux-page.component';
@@ -23,6 +25,8 @@ const routes: Routes = [
     component: AdminLandpageComponent,
     children: [
       {path: 'home', component: DashboardPageComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegisterComponent},
       {
         path: 'proprietaire', component: ProprietairePageComponent,
         children: [
